@@ -46,7 +46,7 @@ namespace Assignment
         {
             // base case
             // n = 0
-            if(n <= 0) return n;
+            if(n <= 0) return 0;
             // recursive case
             //n + sum(n-1)
 
@@ -61,10 +61,12 @@ namespace Assignment
         private int SumOfNumbers(int[] numbers, int index)
         {
             // base case
+            if (numbers == null || numbers.Length == 0) return 0;
+            if (index >= numbers.Length) return 0;
 
             // recursive case
-
-            return -1;
+            return numbers[index] + SumOfNumbers(numbers, index + 1);
+           
         }
 
         #endregion
